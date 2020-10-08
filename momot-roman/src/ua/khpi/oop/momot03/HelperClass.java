@@ -1,23 +1,44 @@
 package ua.khpi.oop.momot03;
 import java.util.Scanner;
 
-
 public class HelperClass {
 
-	public void OutputText(StringBuilder line)
+	public void outputText(StringBuilder line)
 	{
 		System.out.println(line);
 	}
 	
-	public String InputText()
+	public String inputText()
 	{
 		Scanner scan = new Scanner(System.in);
-		System.out.print("Enter text: ");
 		
 		String inputText = scan.nextLine();
 		
-		scan.close();
 		return inputText;
+	}
+	
+	public void mainTask(StringBuilder processedText, StringBuilder lineToInsert, String endOfWord)
+	{
+		int lengthOfInsertedText = lineToInsert.length();
+		int index = 0;
+		boolean stop = false;
+		
+		while(!stop)
+		{
+			index = processedText.indexOf(endOfWord, index+1);
+			
+			if(index == -1) stop = true;
+			else
+			{
+				index++;
+				
+				if(processedText.charAt(index) == ' ' || processedText.charAt(index) == '.' || processedText.charAt(index) == ',' || processedText.charAt(index) == '!' || processedText.charAt(index) == ':'|| processedText.charAt(index) == ';' || processedText.charAt(index) == '?')
+				{
+					processedText.insert(index,lineToInsert);
+					index += lengthOfInsertedText;
+				}
+			}
+		}
 	}
 
 }

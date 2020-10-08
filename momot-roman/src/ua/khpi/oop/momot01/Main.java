@@ -7,7 +7,7 @@ public class Main {
 		int twoDoubleNumbers = 0b11111;		//31
 		int twoHexNumbers = 04631;
 		int module = 13%26+1;				//variant 14
-		char letter = 'N';
+		char letter = (char) (64 + module);
 		
 		countOddEven(recordBook);
 		countOddEven(phoneNumber);
@@ -16,19 +16,14 @@ public class Main {
 		countOddEven(module);
 		countOddEven(letter);
 		
-		String value1 = Integer.toBinaryString(recordBook);
-		String value2 = Long.toBinaryString(phoneNumber);
-		String value3 = Integer.toBinaryString(twoDoubleNumbers);
-		String value4 = Integer.toBinaryString(twoHexNumbers);
-		String value5 = Integer.toBinaryString(module);
-		String value6 = Integer.toBinaryString(letter);
+		System.out.println("============");
 		
-		countOnes(value1);
-		countOnes(value2);
-		countOnes(value3);
-		countOnes(value4);
-		countOnes(value5);
-		countOnes(value6);
+		countOnes(recordBook);
+		countOnes(phoneNumber);
+		countOnes(twoDoubleNumbers);
+		countOnes(twoHexNumbers);
+		countOnes(module);
+		countOnes(letter);
 
 	}
 	
@@ -36,7 +31,7 @@ public class Main {
 	{
 		int oddResult = 0, evenResult = 0;
 		
-		System.out.println("Число для подсчёта: " + value);
+		System.out.println("Value to count: " + value);
 		
 		while(value > 0)
 		{
@@ -48,22 +43,27 @@ public class Main {
 			value /= 10;
 		}
 		
-		System.out.println("Количество чётных цифр: " + evenResult);
-		System.out.println("Количество нечётных цифр: " + oddResult + "\n");
+		System.out.println("Number of even digits: " + evenResult);
+		System.out.println("Number of odd digits: " + oddResult + "\n");
 	}
 	
-	static void countOnes(String value)
+	static void countOnes(long value)
 	{
-		int result = 0;
-		long numberDouble = Long.parseLong(value, 2);
-		
-		for(int i = 0; i < value.length(); i++)
-			if(value.charAt(i)== '1')
-				result++;
-		
-		System.out.println("Входное число: " + numberDouble);
-		System.out.println("Числов в двоичной системе: " + value);
-		System.out.println("Количество единиц: " + result + "\n");
+		long bit;   
+        int result = 0;
+        
+        System.out.println("\nInput number: " + value);
+        System.out.print("Number in binary system: ");
+         
+        while(value !=0 ) 
+        {   
+        	bit = value%2;  
+        	System.out.print(bit);
+        	if(bit==1) result++;
+        	value /= 2;  
+        }  
+        
+        System.out.println("\nNumber of ones: " + result);
 	}
 }
 
