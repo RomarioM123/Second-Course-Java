@@ -6,6 +6,7 @@ import java.io.ObjectOutputStream;
 import java.io.NotSerializableException;
 import java.util.Iterator;
 import java.util.Scanner;
+import task6.HelperClass;
 
 public class Main {
 
@@ -99,8 +100,11 @@ public class Main {
 			case "5":
 				if(array.size() != 0)
 				{
-					UtilityClass util = new UtilityClass();
-					util.mainTask(array);
+					for (int i = 0; i < array.size(); i++) 
+					{
+						HelperClass.task(array.getLine(i));
+						System.out.print("\n");
+					}
 				}
 				else
 				{
@@ -208,6 +212,6 @@ public class Main {
 		array.clear();
 		scan.close();
 	}
-
+	
 }
 
