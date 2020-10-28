@@ -1,0 +1,59 @@
+package ua.khpi.oop.momot08;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class Event {
+	private transient GregorianCalendar startTime;	//время начала
+	private int duration;					//длительность
+	private String address;					//место проведения
+	private String[] people;				//имена участников
+	
+	public Event()
+	{
+		super();
+	}
+	
+	public GregorianCalendar getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(GregorianCalendar startTime) {
+		this.startTime = startTime;
+	}
+	public int getDuration() {
+		return duration;
+	}
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String[] getPeople() {
+		return people;
+	}
+	public void setPeople(String[] people) {
+		this.people = people;
+	}
+	public Event(GregorianCalendar date, int length, String address, String[] people)
+	{
+		startTime = date;
+		duration = length;
+		this.address = address;
+		this.people = people;
+	}
+	
+	public void outputData()
+	{
+		System.out.println("Event start time: " + startTime.getTime());
+		System.out.println("Duration of the event (in minutes): " + duration);
+		System.out.println("Event address: " + address);
+		System.out.println("List of participants: ");
+		for (int i = 0; i < people.length; i++) {
+			System.out.println(i+1 + ". " + people[i]);
+		}
+	}
+}

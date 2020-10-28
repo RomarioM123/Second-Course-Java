@@ -21,11 +21,11 @@ public class Main {
 		date1.set(Calendar.SECOND, 00);
 		Event event2 = new Event(date1,45,"Площадь Конституции",listOfPeople2);
 		
-		LinkedList<Event> eventList = new LinkedList<Event>();
-		eventList.add(event1);
-		eventList.add(event2);
+		EventList array = new EventList();
+		array.array[0] = new Event(date1,180,"Проспект Льва Ландау 87",listOfPeople1);
+		array.array[1] = new Event(date1,45,"Площадь Конституции",listOfPeople2);
 		
-		for (Event event : eventList) {
+		for (Event event : array.array) {
 			event.outputData();
 			System.out.println();
 		}
