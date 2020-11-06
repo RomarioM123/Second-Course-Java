@@ -1,12 +1,11 @@
 package ua.khpi.oop.momot08;
-import java.util.Arrays;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Event {
-	private transient GregorianCalendar startTime;	//время начала
+	private GregorianCalendar startTime;	//время начала
 	private int duration;					//длительность
 	private String address;					//место проведения
+	private String description;				//описание события
 	private String[] people;				//имена участников
 	
 	public Event()
@@ -26,6 +25,14 @@ public class Event {
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
+	public String getDescription()
+	{
+		return description;
+	}
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
 	public String getAddress() {
 		return address;
 	}
@@ -38,12 +45,13 @@ public class Event {
 	public void setPeople(String[] people) {
 		this.people = people;
 	}
-	public Event(GregorianCalendar date, int length, String address, String[] people)
+	public Event(GregorianCalendar date, int length, String address, String[] people, String description)
 	{
 		startTime = date;
 		duration = length;
 		this.address = address;
 		this.people = people;
+		this.description = description;
 	}
 	
 	public void outputData()
@@ -51,6 +59,7 @@ public class Event {
 		System.out.println("Event start time: " + startTime.getTime());
 		System.out.println("Duration of the event (in minutes): " + duration);
 		System.out.println("Event address: " + address);
+		System.out.println("Event description: " + description);
 		System.out.println("List of participants: ");
 		for (int i = 0; i < people.length; i++) {
 			System.out.println(i+1 + ". " + people[i]);

@@ -20,7 +20,7 @@ public class Main {
 		date1.set(Calendar.HOUR_OF_DAY, 18);
 		date1.set(Calendar.MINUTE, 0);
 		date1.set(Calendar.SECOND, 10);
-		Event event1 = new Event(date1,180,"Проспект Льва Ландау 87",listOfPeople);
+		Event event1 = new Event(date1,180,"Проспект Льва Ландау 87",listOfPeople, "Halloween");
 		array.addEl(event1);
 		
 		String[] listOfPeople2 = {"Махатма Ганди", "Иисак Ньютон", "Джордж Буш Младший"};
@@ -28,7 +28,7 @@ public class Main {
 		date1.set(Calendar.HOUR_OF_DAY, 9);
 		date1.set(Calendar.MINUTE, 30);
 		date1.set(Calendar.SECOND, 00);
-		event1 = new Event(date1,45,"Площадь Конституции",listOfPeople2);
+		event1 = new Event(date1,45,"Площадь Конституции",listOfPeople2, "A lot of drunk people");
 		array.addEl(event1);
 		
 		boolean stop = false;
@@ -96,11 +96,13 @@ public class Main {
 				System.out.print("Enter event address: ");
 				scan.nextLine();
 				String temp = scan.nextLine();
+				System.out.print("Enter event description: ");
+				String description = scan.nextLine();
 				System.out.print("Enter event length: ");
 				value = scan.nextInt();
 				System.out.println("\nEvent added.\n");
 				
-				Event newEvent = new Event(date,value,temp,list);
+				Event newEvent = new Event(date,value,temp,list,description);
 				array.addEl(newEvent);
 				
 				break;
@@ -346,7 +348,7 @@ public class Main {
 					decoder.close();
 					array.setSize(array.array.length);
 				} catch (Exception e) {
-					//System.out.println(e);
+					System.out.println(e);
 					break;
 				} 
 				System.out.println("Deserialization successful.\n");
