@@ -348,7 +348,7 @@ public class Main {
 					decoder.close();
 					array.setSize(array.array.length);
 				} catch (Exception e) {
-					System.out.println(e);
+					System.out.println();
 					break;
 				} 
 				System.out.println("Deserialization successful.\n");

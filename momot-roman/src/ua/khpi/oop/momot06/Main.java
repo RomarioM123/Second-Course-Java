@@ -130,19 +130,27 @@ public class Main {
 			case "7":
 				if(array.size() != 0)
 				{
-					System.out.print("Enter number of lines in compared array: ");
+					System.out.print("\nEnter number of lines in compared array: ");
 					number = scan.nextInt();
 					
 					if(number >= 0)
 					{
 						MyContainer arrayToCompare = new MyContainer();
-						System.out.print("Enter your processed text: ");
-						
+						System.out.print("\nEnter your processed text:\n");
+						scan.nextLine();
 						for (int i = 0; i < number; i++) 
 						{
-							System.out.print(i + ". ");
+							System.out.print(i+1 + ". ");
 							arrayToCompare.add(scan.nextLine());
-							System.out.println( );
+							//System.out.println( );
+						}
+						if(array.containsAll(arrayToCompare) == true)
+						{
+							System.out.println("Arrays are equal.\n");
+						}
+						else
+						{
+							System.out.println("Arrays are not equal.\n");
 						}
 					}
 				}
