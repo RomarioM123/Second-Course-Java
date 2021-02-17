@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.khpi.oop.momot16.view.RootLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <Menu mnemonicParsing="false" text="XML">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleSaveXMLFile" text="Save xml file" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleOpenXMLFile" text="Open xml file" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Ser">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleOpenSerFile" text="Open ser file" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSaveSerFile" text="Save ser file" />
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleNew" text="New list" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

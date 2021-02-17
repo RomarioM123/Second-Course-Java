@@ -3,10 +3,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.NotSerializableException;
-import java.util.Iterator;
 import java.util.Scanner;
-import task6.HelperClass;
+
+import ua.khpi.oop.momot03.HelperClass;
 
 public class Main {
 
@@ -17,6 +16,8 @@ public class Main {
 		boolean stop = false;
 		String choise;
 		String data;
+		
+		HelperClass task = new HelperClass();
 		
 		while(stop != true)
 		{
@@ -102,7 +103,7 @@ public class Main {
 				{
 					for (int i = 0; i < array.size(); i++) 
 					{
-						HelperClass.task(array.getLine(i));
+						//HelperClass.task(array.getLine(i));
 						System.out.print("\n");
 					}
 				}
